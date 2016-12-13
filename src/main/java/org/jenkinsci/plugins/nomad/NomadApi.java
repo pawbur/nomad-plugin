@@ -133,7 +133,7 @@ public final class NomadApi {
                 buildDriverConfig(name, secret,template),
                 new Resource(
                     template.getCpu(),
-                    template.getMemory(),
+                    template.getMemory()
                 ),
                 new LogConfig(1, 10),
                 new Artifact[]{
