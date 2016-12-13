@@ -2,22 +2,22 @@ package org.jenkinsci.plugins.nomad.Api;
 
 public class EphemeralDisk {
 
-    private Integer Size;
+    private Integer SizeMB;
     private Boolean Migrate;
     private Boolean Sticky;
-    
-    public EphemeralDisk(Integer size, Boolean migrate, Boolean sticky) {
-        Size = size;
+
+    public EphemeralDisk(Integer sizeMB, Boolean migrate, Boolean sticky) {
+        SizeMB = sizeMB;
         Migrate = migrate;
         Sticky = sticky;
     }
 
-    public Integer getSize() {
-        return Size;
+    public Integer getSizeMB() {
+        return SizeMB;
     }
 
-    public void setSize(Integer size) {
-        Size = size;
+    public void setSizeMB(Integer sizeMB) {
+        SizeMB = sizeMB;
     }
 
     public Boolean getMigrate() {
@@ -27,7 +27,7 @@ public class EphemeralDisk {
     public void setMigrate(Boolean migrate) {
         Migrate = migrate;
     }
-    
+
     public Boolean getSticky() {
         return Sticky;
     }
