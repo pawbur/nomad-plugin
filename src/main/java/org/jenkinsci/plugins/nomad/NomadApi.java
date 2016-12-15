@@ -92,7 +92,7 @@ public final class NomadApi {
         }
 
         if (template.getDriver().equals("java")) {
-            driverConfig.put("jar_path", "/slave.jar");
+            driverConfig.put("jar_path", "local/slave.jar");
             driverConfig.put("args", args);
         } else if (template.getDriver().equals("docker")) {
             String prefixCmd = template.getPrefixCmd();
