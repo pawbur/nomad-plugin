@@ -92,7 +92,7 @@ public final class NomadApi {
         }
 
         if (template.getDriver().equals("java")) {
-            driverConfig.put("jar_path", "local/slave.jar");
+            driverConfig.put("jar_path", "/local/slave.jar");
             driverConfig.put("args", args);
         } else if (template.getDriver().equals("docker")) {
             String prefixCmd = template.getPrefixCmd();
@@ -100,7 +100,7 @@ public final class NomadApi {
             if (!prefixCmd.isEmpty())
             {
                 driverConfig.put("command", "/bin/bash");
-                String argString = prefixCmd + "; java -jar local/slave.jar ";
+                String argString = prefixCmd + "; java -jar /local/slave.jar ";
                 argString += StringUtils.join(args, " ");
                 args.clear();
                 args.add("-c");
@@ -109,7 +109,7 @@ public final class NomadApi {
             else {
                 driverConfig.put("command", "java");
                 args.add(0, "-jar");
-                args.add(1, "local/slave.jar");
+                args.add(1, "/local/slave.jar");
             }
             driverConfig.put("image", template.getImage());
          
@@ -137,7 +137,7 @@ public final class NomadApi {
                 ),
                 new LogConfig(1, 10),
                 new Artifact[]{
-                    new Artifact(template.getCloud().getSlaveUrl(), null, "local/")
+                    new Artifact(template.getCloud().getSlaveUrl(), null, "/local/")
                 }
         );
 
