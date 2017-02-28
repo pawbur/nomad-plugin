@@ -153,7 +153,7 @@ public final class NomadApi {
                 name,
                 name,
                 template.getRegion(),
-                "batch",
+                "service",
                 template.getPriority(),
                 template.getDatacenters().split(","),
                 new TaskGroup[]{taskGroup}
